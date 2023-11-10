@@ -15,18 +15,18 @@ function exibirResultadoplanos(valores) {
 function validacao(IMC) {
 
     if (IMC < 18.5) {
-        return 'Baixo peso';
+        return 'Classificação: Baixo peso - Risco de Comorbidade: Baixo';
 
     } else if (IMC >= 18.5 && IMC < 25) {
-        return 'Normal';
+        return 'Classificação: Normal - Risco de Comorbidade: Normal';
     } else if (IMC >= 25 && IMC < 30) {
-        return 'Sobrepeso';
+        return 'Classificação: Sobrepeso - Risco de Comorbidade: Aumentado';
     } else if (IMC >= 30 && IMC < 35) {
-        return 'Obesidade';
+        return 'Classificação: Obesidade - Risco de Comorbidade: Moderado';
     } else if (IMC >= 35 && IMC < 40) {
-        return 'Obesidade Mórbida';
+        return 'Classificação: Obesidade Mórbida - Risco de Comorbidade: Grave';
     } else if (IMC > 40) {
-        return 'Obesidade Mórbida';
+        return 'Classificação: Obesidade Mórbida - Risco de Comorbidade: Muito Grave';
     }
 }
 //calcula plano A
