@@ -1,0 +1,115 @@
+body {
+    background-color: #8627b3;
+}
+
+.titulo{
+    margin-top: 10px;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    font-size: 27px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.calculadora {
+    background-color: #ce9bcf;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+label {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #8627b3;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.inputlidade,
+.inputaltura,
+.inputpeso::placeholder {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+input {
+    text-align: center;
+    width: 10px;
+}
+
+.processar {
+    margin-top: 10px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: #8627b3;
+    border: black;
+    font-weight: bold;
+
+}
+
+.processar:hover {
+    background-color: #a657ca;
+}
+
+.processar:active {
+    background-color: #a657ca;
+}
+
+.resultado {
+    margin-top: 5px;
+
+}
+
+.resultadoheader {
+    background-color: #8627b3;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
+    font-weight: bold;
+
+}
+
+.resultadobody {
+    height: 181px;
+    
+    
+}
+.resultadobody p{
+    height: 181px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 25px;    
+    text-align: left;
+}
+
+
+
+.planos{
+    margin-top: 10px;
+    border-radius: 8px;
+    background-color: #ce9bcf;
+    padding: 8px;
+}
+
+.tabelaplanos{
+    border-radius: 8px;
+    background-color: white;
+    padding: 5px;
+}
+
+.titulostabela th{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #8627b3;
+    font-size: 15px;
+    font-weight: bold;
+}
+.titulostabela{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #8627b3;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.tituloplanos{
+    margin-top: 10px;
+    text-align: center;
+    font-weight: bold;
+    color: #8627b3;
+    font-size: 27px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
