@@ -1,17 +1,66 @@
 function processar() {
     const { peso, altura, idade } = pegarDados();
     const IMC = (peso / (altura * altura));
+    const fator = CalcularFator(IMC);
+
     const resultado = validacao(IMC);
-    exibirResultadoIMC(resultado);
-    const valores = [calcularPrecoPlanoBasico(idade, IMC), calcularPrecoPlanoStandard(idade, IMC), calcularPrecoPlanoPremium(idade, IMC)];
-    exibirResultadoplanos(valores);
+    exibirResultadoIMC(resultado); //EXIBIR RESULTADO IMC
+
+    const valorPlanoBasicoA = [calcularPrecoPlanoBasicoA(idade, IMC).toFixed(2).replace('.',',')];
+    exibirResultadoplanoBasicoA(`R$ ${valorPlanoBasicoA}`); //exibir valores PLANO A
+
+    const valorePlanoStandardA = [calcularPrecoPlanoStandardA(idade, IMC).toFixed(2).replace('.',',')];
+    exibirResultadoplanoStandardA(`R$ ${valorePlanoStandardA}`); //exibir valores PLANO A
+
+    const valoresPlanoPremiumA = [calcularPrecoPlanoPremiumA(idade, IMC).toFixed(2).replace('.',',')];
+    exibirResultadoplanoPremiumA(`R$ ${valoresPlanoPremiumA}`); //exibir valores PLANO A
+
+    const valorPlanoBasicoB = [calcularPrecoPlanoBasicoB(IMC,fator).toFixed(2).replace('.',',')];
+    exibirResultadoplanoBasicoB(`R$ ${valorPlanoBasicoB}`); //exibir valores PLANO B
+
+    const valorePlanoStandardB = [calcularPrecoPlanoStandardB(IMC,fator).toFixed(2).replace('.',',')];
+    exibirResultadoplanoStandardB(`R$ ${valorePlanoStandardB}`); //exibir valores PLANO B
+
+    const valoresPlanoPremiumB = [calcularPrecoPlanoPremiumB(IMC,fator).toFixed(2).replace('.',',')];
+    exibirResultadoplanoPremiumB(`R$ ${valoresPlanoPremiumB}`); //exibir valores PLANO B
 }
+
+
 function exibirResultadoIMC(resultado) {
-    document.getElementById('calc').innerHTML = resultado;
+    document.getElementById('calc').innerHTML = resultado; //EXIBE IMC NA TELA
 }
-function exibirResultadoplanos(valores) {
-    document.getElementById('planos').innerHTML = valores;
+//EXIBIR PLANO A
+function exibirResultadoplanoBasicoA(valorPlanoBasicoA) {
+    document.getElementById('planoBasicoA').innerHTML = valorPlanoBasicoA; //EXIBE PLANO BASICO TELA
 }
+function exibirResultadoplanoStandardA(valorePlanoStandardA) {
+    document.getElementById('planoStandardA').innerHTML = valorePlanoStandardA; //EXIBE PLANO BASICO TELA
+}
+function exibirResultadoplanoPremiumA(valoresPlanoPremiumA) {
+    document.getElementById('planoPremiumA').innerHTML = valoresPlanoPremiumA; //EXIBE PLANO BASICO TELA
+}
+//EXIBIR PLANO B
+function exibirResultadoplanoBasicoB(valorPlanoBasicoB) {
+    document.getElementById('planoBasicoB').innerHTML = valorPlanoBasicoB; //EXIBE PLANO BASICO TELA
+}
+function exibirResultadoplanoStandardB(valorePlanoStandardB) {
+    document.getElementById('planoStandardB').innerHTML = valorePlanoStandardB; //EXIBE PLANO STANDARD TELA
+}
+function exibirResultadoplanoPremiumB(valoresPlanoPremiumB) {
+    document.getElementById('planoPremiumB').innerHTML = valoresPlanoPremiumB; //EXIBE PLANO PREMIUM TELA
+}
+
+
+
+
+
+
+
+
+
+
+
+
 function validacao(IMC) {
 
     if (IMC < 18.5) {
@@ -30,17 +79,54 @@ function validacao(IMC) {
     }
 }
 //calcula plano A
-function calcularPrecoPlanoBasico(idade, IMC) {
+function calcularPrecoPlanoBasicoA(idade, IMC) {
     return 100 + (idade * 10 * (IMC / 10));
 }
 
-function calcularPrecoPlanoStandard(idade, IMC) {
+function calcularPrecoPlanoStandardA(idade, IMC) {
     return (150 + (idade * 15)) * (IMC / 10);
 }
 
-function calcularPrecoPlanoPremium(idade, IMC) {
+function calcularPrecoPlanoPremiumA(idade, IMC) {
     return (200 - (IMC * 10) + (idade * 20)) * (IMC / 10);
 }
+
+//CALCULA PLANO B
+
+function calcularPrecoPlanoBasicoB(IMC,fator) {
+    return 100 + (fator * 10 * (IMC / 10));
+}
+function calcularPrecoPlanoStandardB(IMC,fator) {
+    return (150 + (fator * 15)) * (IMC / 10);
+}
+
+function calcularPrecoPlanoPremiumB(IMC,fator) {
+    return (200 - (IMC * 10) + (fator * 20)) * (IMC / 10);
+}
+
+
+
+function CalcularFator(IMC) {
+    if (IMC < 18.5) {
+        return 10;
+
+    } else if (IMC >= 18.5 && IMC < 25) {
+        return 1;
+    } else if (IMC >= 25 && IMC < 30) {
+        return 6;
+    } else if (IMC >= 30 && IMC < 35) {
+        return 10;
+    } else if (IMC >= 35 && IMC < 40) {
+        return 20;
+    } else if (IMC > 40) {
+        return 30;
+    }
+}
+
+
+
+
+
 
 function pegarDados() {
     const peso = document.getElementById('peso').value;

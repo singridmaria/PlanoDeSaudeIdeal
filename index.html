@@ -10,7 +10,9 @@
 </head>
 
 <body>
+
     <div class="container text-center">
+        <H1>Calcule o seu IMC, ao final escolha um Plano de Saúde ideal.</H1>
         <label for="idade" class="form-label">Qual sua idade?</label>
         <input type="number" id="idade" class="form-control">
 
@@ -21,9 +23,50 @@
         <input type="number" id="altura" class="form-control">
 
         <button class="btn btn-primary" onclick="processar()">Processar</button>
-        <br>
-        <h1 id="calc"></h1>
-        <h1 id="planos"></h1>
+    </div>
+
+    <div class="container text-center">
+        <div class="card">
+            <div class="card-header">
+                RESULTADO IMC
+            </div>
+            <div class="card-body">
+                <blockquote class="blockquote mb-0">
+                    <p id="calc"></p>
+
+                </blockquote>
+            </div>
+        </div>
+    </div>
+
+    <div class="container text-center">
+        <h3>AGORA ESCOLHA UM PLANO DE SAÚDE IDEAL</h3>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">PLANOS</th>
+                        <th scope="col">Basico</th>
+                        <th scope="col">Standard</th>
+                        <th scope="col">Premium</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">A</th>
+                        <td id="planoBasicoA"></td>
+                        <td id="planoStandardA"></td>
+                        <td id="planoPremiumA"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">B</th>
+                        <td id="planoBasicoB"></td>
+                        <td id="planoStandardB"></td>
+                        <td id="planoPremiumB"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
