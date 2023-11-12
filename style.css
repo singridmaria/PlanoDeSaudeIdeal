@@ -77,6 +77,30 @@ input {
     text-align: left;
 }
 
+.sugestao{
+    height: 70%;
+}
+
+
+.sugestaoheader {
+    background-color: #8627b3;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
+    font-weight: bold;
+
+}
+
+.sugestaodobody {
+    height: 130px;
+    
+    
+}
+.sugestaodobody p{
+    height: 181px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 25px;    
+    text-align: center;
+}
 
 
 .planos{
@@ -87,6 +111,7 @@ input {
 }
 
 .tabelaplanos{
+    margin-top: 10px;
     border-radius: 8px;
     background-color: white;
     padding: 5px;

@@ -12,26 +12,26 @@
 </head>
 
 <body>
-    
+
     <div class="container-fluid planoideal">
         <H2 class="titulo">IMC e Plano de Saúde: Calcule e Escolha o Plano Ideal</H2>
         <div class="container-fluid calculadora">
             <div class="imc row">
-    
+
                 <div class="container text-center perguntas col">
-    
+
                     <label for="idade" class="form-label labelidade">Qual sua idade?</label>
                     <input type="number" id="idade" class="form-control inputidade" placeholder="Informe sua idade">
-    
+
                     <label for="peso" class="form-label labelpeso">Qual o seu peso?</label>
                     <input type="number" id="peso" class="form-control inputpeso " placeholder="Informe seu peso">
-    
+
                     <label for="altura" class="form-label labelaltura">Qual sua altura?</label>
                     <input type="number" id="altura" class="form-control inputaltura" placeholder="Informe sua altura">
-    
+
                     <button class="btn btn-primary processar" onclick="processar()">Processar</button>
                 </div>
-    
+
                 <div class="container text-center respostas col">
                     <div class="card resultado">
                         <div class="card-header resultadoheader">
@@ -40,7 +40,7 @@
                         <div class="card-body resultadobody">
                             <blockquote class="blockquote mb-0 resultado">
                                 <p id="calc"></p>
-    
+
                             </blockquote>
                         </div>
                     </div>
@@ -49,14 +49,62 @@
         </div>
         <div class="container-fluid text-center planos">
             <h3 class="tituloplanos">AGORA ESCOLHA UM PLANO DE SAÚDE IDEAL</h3>
+            <div class="sugs row">
+                <div class="container text-center planoIdeal col">
+                    <div class="card sugestao">
+                        <div class="card-header sugestaoheader">
+                            Para plano Básico sugerimos o valor:
+                        </div>
+                        <div class="card-body sugestaodobody">
+                            <blockquote class="blockquote mb-0 resultado">
+                                <p id="sugestaobasico"></p>
+
+                            </blockquote>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container text-center planoIdeal col">
+                    <div class="card sugestao">
+                        <div class="card-header sugestaoheader">
+                            Para plano Standard sugerimos o valor:
+                        </div>
+                        <div class="card-body sugestaodobody">
+                            <blockquote class="blockquote mb-0 resultado">
+                                <p id="sugestaostandar"></p>
+
+                            </blockquote>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container text-center planoIdeal col">
+                    <div class="card sugestao">
+                        <div class="card-header sugestaoheader">
+                            Para plano Premium sugerimos o valor:
+                        </div>
+                        <div class="card-body sugestaodobody">
+                            <blockquote class="blockquote mb-0 resultado">
+                                <p id="sugestaopremium"></p>
+
+                            </blockquote>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
             <div class="table-responsive tabelaplanos">
                 <table class="table tabela">
                     <thead>
                         <tr class="titulostabela">
-                            <th scope="col" >PLANOS</th>
-                            <th scope="col" >BASICO</th>
-                            <th scope="col" >STANDARD</th>
-                            <th scope="col" >PREMIUM</th>
+                            <th scope="col">PLANOS</th>
+                            <th scope="col">BASICO</th>
+                            <th scope="col">STANDARD</th>
+                            <th scope="col">PREMIUM</th>
                         </tr>
                     </thead>
                     <tbody>
