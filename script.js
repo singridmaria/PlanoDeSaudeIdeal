@@ -44,12 +44,68 @@ function processar() {
     const valorPlanoPremiumBsugest = [calcularPrecoPlanoPremiumB(IMC, fator)];
     const sugestaoValorPlanoPremium = Math.min(valorPlanoPremiumAsugest, valorPlanoPremiumBsugest).toFixed(2).replace('.', ',');
     exibirsugestaoplanoPremium(`R$ ${sugestaoValorPlanoPremium}`); //exibir Sugestao valor plano premium
+    
+    
+    const planoBasicoIdeal = [verificaQualPlanoBasico(valorPlanoBasicoAsugest,valorPlanoBasicoBsugest)];
+    exibirplanobasicoIdeal(planoBasicoIdeal);
+
+    const planoStandardIdeal = [verificaQualPlanoStandard(valorPlanoStandardAsugest,valorPlanoStandardBsugest)];
+    exibirplanoStandardIdeal(planoStandardIdeal);
+
+    const planoPremiumIdeal = [verificaQualPlanoPremium(valorPlanoPremiumAsugest,valorPlanoPremiumBsugest)];
+    exibirplanoPremiumIdeal(planoPremiumIdeal);
+
 }
 
-//EXIBE QUAL PLANO À SER EXIBIDO
-function verificaQualPlano(sugestaoValorPlanoBasico,sugestaoValorPlanoStandard,sugestaoValorPlanoPremium) {
+
+//FUNÇÃO PARA EXIBIR QUAL PLANO
+function exibirplanobasicoIdeal(planoBasicoIdeal) {
+    document.getElementById('planoBasiscoIdeal').innerHTML = planoBasicoIdeal; //EXIBE PLANO BÁSICO
+}
+//FUNÇÃO PARA EXIBIR QUAL PLANO
+function exibirplanoStandardIdeal(planoStandardIdeal) {
+    document.getElementById('planoStandardIdeal').innerHTML = planoStandardIdeal; //EXIBE PLANO BÁSICO
+}
+//FUNÇÃO PARA EXIBIR QUAL PLANO
+function exibirplanoPremiumIdeal(planoPremiumIdeal) {
+    document.getElementById('planoPremiumIdeal').innerHTML = planoPremiumIdeal; //EXIBE PLANO BÁSICO
+}
+
+//FUNÇÃO PARA QUAL PLANO À SER EXIBIDO
+function verificaQualPlanoBasico(valorPlanoBasicoAsugest,valorPlanoBasicoBsugest) {
+        if (Math.min(valorPlanoBasicoAsugest, valorPlanoBasicoBsugest) == valorPlanoBasicoAsugest) {
+            return "A";
+    
+        } else if (Math.min(valorPlanoBasicoAsugest, valorPlanoBasicoBsugest) == valorPlanoBasicoBsugest) {
+            return "B";
+        }
 
 }
+
+//FUNÇÃO PARA QUAL PLANO À SER EXIBIDO
+function verificaQualPlanoStandard(valorPlanoStandardAsugest,valorPlanoStandardBsugest) {
+    if (Math.min(valorPlanoStandardAsugest, valorPlanoStandardBsugest) == valorPlanoStandardAsugest) {
+        return "A";
+
+    } else if (Math.min(valorPlanoStandardAsugest, valorPlanoStandardBsugest) == valorPlanoStandardBsugest) {
+        return "B";
+    }
+
+}
+
+//FUNÇÃO PARA QUAL PLANO À SER EXIBIDO
+function verificaQualPlanoPremium(valorPlanoPremiumAsugest,valorPlanoPremiumBsugest) {
+    if (Math.min(valorPlanoPremiumAsugest, valorPlanoPremiumBsugest) == valorPlanoPremiumAsugest) {
+        return "A";
+
+    } else if (Math.min(valorPlanoPremiumAsugest, valorPlanoPremiumBsugest) == valorPlanoPremiumBsugest) {
+        return "B";
+    }
+
+}
+
+
+
 
 //EXIBE RESULTADO IMC
 function exibirResultadoIMC(resultado) {
@@ -101,7 +157,7 @@ function validacao(IMC) {
         return 'Classificação: Obesidade Mórbida - Risco de Comorbidade: Grave';
     } else if (IMC > 40) {
         return 'Classificação: Obesidade Mórbida - Risco de Comorbidade: Muito Grave';
-    }
+    } else return "";
 }
 
 //calcula plano A
@@ -141,7 +197,8 @@ function CalcularFator(IMC) {
         return 20;
     } else if (IMC > 40) {
         return 30;
-    }
+    } else         return "";
+    
 }
 
 //PEGAR DADOS
