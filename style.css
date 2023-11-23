@@ -11,10 +11,15 @@ body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+
 .calculadora {
     background-color: #ce9bcf;
     border-radius: 8px;
     padding: 10px;
+}
+
+#calc, #sugestaobasico, #sugestaostandar, #sugestaopremium {
+    height: 100%;
 }
 
 label {
@@ -54,7 +59,12 @@ input {
 
 .resultado {
     margin-top: 5px;
+    height: 100%;
 
+}
+
+.respostas{
+    height: 100%;
 }
 
 .resultadoheader {
@@ -65,8 +75,15 @@ input {
 
 }
 
+.tituloheader{
+    height: 100%;
+}
+
+.card-header {
+    height: 45%;
+}
 .resultadobody {
-    height: 181px;
+    height: 100%;
     
     
 }
@@ -78,7 +95,7 @@ input {
 }
 
 .sugestao{
-    height: 70%;
+    height: 100%;
 }
 
 
